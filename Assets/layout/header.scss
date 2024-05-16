@@ -1,0 +1,7 @@
+header {
+    & a {
+        @extend %FlexCenter;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}

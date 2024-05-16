@@ -1,0 +1,33 @@
+footer {
+
+    background-color: $black;
+    color: white;
+    padding-left: 20px;
+
+
+    & h3 {
+        padding: 20px 0 20px 0px;
+    }
+
+    & ul {
+        padding-bottom: 15px;
+
+        & li {
+            @extend %FlexStart;
+            gap: 20px;
+            padding-bottom: 15px;
+
+            & .utensils {
+                width: 11px;
+                height: 13px
+            }
+
+            & .handshake {
+                width: 10.92px;
+                height: 13px
+            }
+        }
+
+    }
+
+}
