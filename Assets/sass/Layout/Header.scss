@@ -1,0 +1,10 @@
+header {
+    @extend %grid-center;
+    @include grid-template-set(1);
+    padding: 1em;
+
+    & h1 {
+        @include grid-pos-set (1, auto, 1, auto);
+        font-family: "Shrikhand", cursive;
+    }
+}

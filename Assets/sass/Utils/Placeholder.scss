@@ -1,0 +1,28 @@
+//Basic grid setting
+%grid-center {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+}
+
+//Soulignement titre
+%border-length-var {
+    &::after {
+        border-bottom: 3px $vert-clair solid;
+        content: '';
+        display: block;
+        width: 5em;
+    }
+}
+
+%ImgCover {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+%FlexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

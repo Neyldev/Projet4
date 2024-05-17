@@ -1,38 +1,22 @@
-main .restaurants ul .CardImg img {
+h1 {
+  font-size: 32px;
+}
+
+h3,
+h2 {
+  font-weight: 700;
+}
+
+main .restaurants, main .fonctionnement, main .reservation, main .position, header {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+
+main .restaurants ul li a .ContainerImg img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-}
-
-main .position, header a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer ul li, main .fonctionnement ul li {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
-
-main .restaurants ul .CardImg {
-  border-radius: 25px 25px 0px 0px;
-}
-
-main .fonctionnement ul li span {
-  display: inline-block;
-  position: absolute;
-  left: 10px;
-  padding: 6px 9px;
-  font-size: 10px;
-  font-weight: 900;
-  line-height: 1;
-  content: "\f111";
-  color: white;
-  background-color: #9356DC;
-  border: 1px solid #efefef;
-  border-radius: 50%;
 }
 
 * {
@@ -41,84 +25,14 @@ main .fonctionnement ul li span {
   font-style: normal;
 }
 
-.shrikhand-regular {
-  font-family: "Shrikhand", serif;
-  font-weight: 400;
-  font-style: normal;
+header {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1em;
 }
-
-header a {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-main .position {
-  padding: 20px;
-  background-color: #eaeaea;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-main .position i {
-  padding-right: 10px;
-}
-main .position p {
-  padding-left: 10px;
-  font-weight: 500;
-}
-main .reservation {
-  text-align: center;
-  background-color: #f6f6f6;
-}
-main .reservation h2 {
-  font-size: 24px;
-  font-weight: 700;
-  padding: 45px 0px 20px 0px;
-}
-main .reservation p {
-  font-size: 18px;
-  font-weight: 300;
-  padding: 0px 0px 20px 0px;
-}
-main .fonctionnement h2 {
-  padding: 55px 0px 15px 15px;
-}
-main .fonctionnement ul {
-  display: grid;
-  grid-gap: 2.5em;
-  margin: 20px;
-}
-main .fonctionnement ul li {
-  background-color: #f6f6f6;
-  gap: 20px;
-  height: 50px;
-  padding: 0px 20px;
-  border-radius: 25px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-main .fonctionnement ul i {
-  padding-left: 20px;
-  color: #7e7e7e;
-}
-main .fonctionnement ul .purple {
-  color: #9356DC;
-}
-main .restaurants {
-  background-color: #f6f6f6;
-}
-main .restaurants ul {
-  display: grid;
-  grid-template-rows: repeat(4, 1fr);
-  gap: 50px;
-}
-main .restaurants ul .CardImg {
-  color: wihte;
-  width: auto;
-  height: auto;
-}
-main .restaurants ul .CardImg img {
-  border-radius: 25px 25px 0px 0px;
-}
-main .restaurants ul .CardInfo {
-  color: wihte;
+header h1 {
+  grid-row: 1 / auto;
+  grid-column: 1 / auto;
+  font-family: "Shrikhand", cursive;
 }
 
 footer {
@@ -126,15 +40,46 @@ footer {
   color: white;
   padding-left: 20px;
 }
+@media (min-width: 960px) {
+  footer {
+    height: 114px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: end;
+    gap: 30px;
+  }
+}
 footer h3 {
   padding: 20px 0 20px 0px;
+  font-family: "Shrikhand", cursive;
+  font-weight: 500;
+}
+@media (min-width: 960px) {
+  footer h3 {
+    padding: 0px 70px 30px 70px;
+  }
 }
 footer ul {
   padding-bottom: 15px;
 }
+@media (min-width: 960px) {
+  footer ul {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap: 30px;
+  }
+}
 footer ul li {
   gap: 20px;
   padding-bottom: 15px;
+}
+footer ul li i {
+  padding-right: 1em;
+}
+footer ul li a {
+  color: white;
 }
 footer ul li .utensils {
   width: 11px;
@@ -143,4 +88,210 @@ footer ul li .utensils {
 footer ul li .handshake {
   width: 10.92px;
   height: 13px;
+}
+
+.btn {
+  padding: 1em 1.5em;
+  color: #ffffff;
+  transition: 250ms;
+}
+.btn--gradient {
+  background-image: radial-gradient(100% 50% at 20% 10%, #FF79DA 0%, #9356DC 200%);
+}
+.btn--radius {
+  border-radius: 2em;
+}
+.btn:hover {
+  opacity: 0.8;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+}
+
+.btn__like .heart-one,
+button .heart-one {
+  display: block;
+  transform: scale(1);
+  transition: all 0.5s;
+}
+.btn__like .heart-two,
+button .heart-two {
+  display: block;
+  position: absolute;
+  top: 0;
+  transform: scale(0);
+  transition: all 0.5s;
+  background-color: black;
+  background-image: linear-gradient(0deg, #FF79DA, #9356DC);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.btn__like:hover .heart-one,
+button:hover .heart-one {
+  opacity: 0;
+  transform: scale(0);
+}
+.btn__like:hover .heart-two,
+button:hover .heart-two {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.list-item {
+  padding: 1.5em 1em;
+  text-align: left;
+  border-radius: 1em;
+  box-shadow: 0 4px 11px rgba(0, 0, 0, 0.2);
+}
+
+.--background {
+  background: #f6f6f6;
+}
+
+main .position {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1em;
+  background: #eaeaea;
+  background: linear-gradient(180deg, rgba(173, 173, 173, 0.35) 0%, rgba(234, 234, 234, 0.75) 15%, rgb(234, 234, 234) 100%);
+}
+main .position i {
+  padding: 0 0.3em 0 0;
+}
+main .reservation {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 2em 0 3em;
+  background: #f6f6f6;
+  text-align: center;
+}
+main .reservation h2 {
+  padding: 0 5em;
+}
+main .reservation p {
+  padding: 1em 5em 2em;
+}
+main .fonctionnement {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 3em 1em;
+  max-width: 1440px;
+  margin: auto;
+}
+main .fonctionnement h2 {
+  grid-row: 1 / auto;
+  grid-column: 1 / 2;
+  justify-self: start;
+}
+main .fonctionnement ol {
+  grid-row: 2 / auto;
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 2em;
+  margin: 1em 1em 0;
+  justify-self: normal;
+  counter-reset: numero;
+}
+@media (min-width: 960px) {
+  main .fonctionnement ol {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+main .fonctionnement li::before {
+  counter-increment: numero;
+  content: counter(numero);
+  position: relative;
+  left: -1.9em;
+  padding: 0.3em 0.6em;
+  border-radius: 70%;
+  background-color: #9356DC;
+  color: #ffffff;
+}
+main .fonctionnement li:hover {
+  background-color: #f2eafb;
+}
+main .fonctionnement li:hover i {
+  color: #9356DC;
+}
+main .fonctionnement p {
+  display: inline-block;
+  position: relative;
+  left: -0.7em;
+}
+main .fonctionnement i {
+  padding: 0 1em 0 0;
+}
+main .restaurants {
+  grid-template-columns: repeat(1, 1fr);
+  padding: 3em 1em;
+  background-color: #f6f6f6;
+}
+main .restaurants h2 {
+  grid-row: 1 / auto;
+  grid-column: 1 / 2;
+  justify-self: start;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+}
+main .restaurants ul {
+  max-width: 1440px;
+  display: grid;
+  width: 100%;
+  grid-row: 2 / auto;
+  grid-column: 1 / 2;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2em;
+  margin: 1em 0;
+}
+@media (min-width: 960px) {
+  main .restaurants ul {
+    grid-row: 2 / auto;
+    grid-column: 1 / 3;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 80px;
+  }
+}
+main .restaurants ul li {
+  display: inline-block;
+  width: 100%;
+}
+main .restaurants ul li a {
+  display: block;
+  padding: 0 0 0.7rem 0;
+  color: #000000;
+  border-radius: 1.5em;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+main .restaurants ul li a .ContainerImg {
+  position: relative;
+  height: 12.5em;
+}
+main .restaurants ul li a .ContainerImg .stick {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  padding: 0.4em 0.6em;
+  color: #008766;
+  background: #99e2d0;
+  border-radius: 0.2em;
+}
+main .restaurants ul li a .ContainerImg img {
+  padding: 0 0 0.5em 0;
+  border-radius: 25px 25px 0px 0px;
+}
+main .restaurants ul li a .ContainerInfo {
+  position: relative;
+}
+main .restaurants ul li a .ContainerInfo h3 {
+  padding: 15px 1rem 0.2rem;
+}
+main .restaurants ul li a .ContainerInfo p {
+  padding: 0px 1rem 15px;
+}
+main .restaurants ul li a .ContainerInfo .btn__like {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5em;
+  cursor: pointer;
 }

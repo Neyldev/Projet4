@@ -1,0 +1,22 @@
+/////////////////////////// Import /////////////////////////////////////
+/// npm run sass
+
+// Utils 
+@import "./Utils/Variables.scss";
+@import "./Utils/Font.scss";
+@import "./Utils/Placeholder.scss";
+@import "./Utils/Mixin.scss";
+
+// Templating
+@import "./Template/Template.scss";
+
+// layout
+@import "./Layout/Header.scss";
+@import "./Layout/Footer.scss";
+
+// Components
+@import "./Components/Btn.scss";
+@import "./Components/List-item.scss";
+
+//Pages
+@import "./Pages/Home.scss";
