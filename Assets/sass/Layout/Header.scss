@@ -7,4 +7,13 @@ header {
         @include grid-pos-set (1, auto, 1, auto);
         font-family: "Shrikhand", cursive;
     }
+
+    & a {
+        @include grid-pos-set (1, auto, -3, auto);
+        @extend %grid-center;
+
+        & i {
+            font-size: 25px;
+        }
+    }
 }

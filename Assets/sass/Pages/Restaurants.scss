@@ -1,0 +1,94 @@
+main {
+
+    & .ImgAccueil {
+
+        & img {
+            @extend %ImgCover;
+        }
+    }
+
+    & .Menu {
+        border-radius: 40px 40px 0px 0px;
+        background-color: $txt-fond-sombre;
+        position: relative;
+        top: -50px;
+
+
+        & .Intro {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 30px 0px 15px;
+
+            & .TitreRestaurant {
+                font-family: "Shrikhand", cursive;
+                font-weight: 400;
+                font-size: 28px;
+            }
+
+            & .btn__like {
+                position: absolute;
+                right: 1.5rem;
+                font-size: 1.5em;
+                cursor: pointer;
+            }
+        }
+
+        & .button {
+            padding: 50px 0px 0px 0px;
+            display: flex;
+            justify-content: center;
+
+            & a {
+                width: 30%;
+                text-align: center;
+            }
+        }
+
+        & div {
+            padding: 0px 15px 0px 15px;
+        }
+
+        & h4 {
+            display: inline-block;
+            position: relative;
+            font-size: 16px;
+            font-weight: 300;
+            padding: 35px 5px 20px 0px;
+        }
+
+        h4:before {
+            content: "";
+            position: absolute;
+            width: 50%;
+            bottom: 13px;
+            border-bottom: 3px solid $aqua-tertiaire;
+        }
+
+
+        & ol {
+            display: grid;
+            grid-gap: 15px;
+
+            & li {
+                background-color: white;
+
+                & .Plat {
+                    font-size: 18px;
+                }
+
+                & .Plat,
+                .prix {
+                    font-weight: bold;
+                }
+
+                & .ingredients {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 15px;
+                }
+            }
+        }
+
+
+    }
+}

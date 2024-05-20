@@ -7,13 +7,13 @@ h2 {
   font-weight: 700;
 }
 
-main .restaurants, main .fonctionnement, main .reservation, main .position, header {
+main .restaurants, main .fonctionnement, main .reservation, main .position, header a, header {
   display: grid;
   align-content: center;
   justify-items: center;
 }
 
-main .restaurants ul li a .ContainerImg img {
+main .ImgAccueil img, main .restaurants ul li a .ContainerImg img {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -33,6 +33,13 @@ header h1 {
   grid-row: 1 / auto;
   grid-column: 1 / auto;
   font-family: "Shrikhand", cursive;
+}
+header a {
+  grid-row: 1 / auto;
+  grid-column: -3 / auto;
+}
+header a i {
+  font-size: 25px;
 }
 
 footer {
@@ -294,4 +301,72 @@ main .restaurants ul li a .ContainerInfo .btn__like {
   right: 1.5rem;
   font-size: 1.5em;
   cursor: pointer;
+}
+
+main .Menu {
+  border-radius: 40px 40px 0px 0px;
+  background-color: #ffffff;
+  position: relative;
+  top: -50px;
+}
+main .Menu .Intro {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 30px 0px 15px;
+}
+main .Menu .Intro .TitreRestaurant {
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  font-size: 28px;
+}
+main .Menu .Intro .btn__like {
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+main .Menu .button {
+  padding: 50px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+}
+main .Menu .button a {
+  width: 30%;
+  text-align: center;
+}
+main .Menu div {
+  padding: 0px 15px 0px 15px;
+}
+main .Menu h4 {
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 35px 5px 20px 0px;
+}
+main .Menu h4:before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  bottom: 13px;
+  border-bottom: 3px solid #99E2D0;
+}
+main .Menu ol {
+  display: grid;
+  grid-gap: 15px;
+}
+main .Menu ol li {
+  background-color: white;
+}
+main .Menu ol li .Plat {
+  font-size: 18px;
+}
+main .Menu ol li .Plat,
+main .Menu ol li .prix {
+  font-weight: bold;
+}
+main .Menu ol li .ingredients {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
 }
