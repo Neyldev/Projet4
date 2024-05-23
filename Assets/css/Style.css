@@ -7,7 +7,7 @@ h2 {
   font-weight: 700;
 }
 
-main .restaurants, main .fonctionnement, main .reservation, main .position, header a, header {
+main .restaurants, main .fonctionnement, main .reservation, main .position, header {
   display: grid;
   align-content: center;
   justify-items: center;
@@ -36,10 +36,15 @@ header h1 {
 }
 header a {
   grid-row: 1 / auto;
-  grid-column: -3 / auto;
+  grid-column: 1 / auto;
+  justify-self: flex-start;
 }
 header a i {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
   font-size: 25px;
+  height: 100%;
 }
 
 footer {
@@ -303,11 +308,24 @@ main .restaurants ul li a .ContainerInfo .btn__like {
   cursor: pointer;
 }
 
+main {
+  background-color: white;
+}
+main .ImgAccueil {
+  height: 275px;
+}
 main .Menu {
   border-radius: 40px 40px 0px 0px;
-  background-color: #ffffff;
+  background-color: #F6F6F6;
   position: relative;
   top: -50px;
+}
+@media (min-width: 960px) {
+  main .Menu {
+    max-width: 960px;
+    display: grid;
+    margin: auto;
+  }
 }
 main .Menu .Intro {
   display: flex;
@@ -336,6 +354,13 @@ main .Menu .button a {
 }
 main .Menu div {
   padding: 0px 15px 0px 15px;
+}
+@media (min-width: 634px) {
+  main .Menu div {
+    max-width: 634px;
+    margin: auto;
+    width: 100%;
+  }
 }
 main .Menu h4 {
   display: inline-block;

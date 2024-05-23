@@ -1,3 +1,5 @@
-1) Impossible de changer la font weight des <p>
-2) position de la fleche dans le Header { @include grid-pos-set (1, auto, -3, auto); }
-2) dimension de l'image d'accueil sur la page " la note enchantée "
+Github : les pages les liens pour rediriger vers les restaurants ne fonctionnent pas sur l'host de Github
+        position de la fleche dans le Header { @include grid-pos-set (1, auto, -3, auto); }
+Impossible de changer la font weight des <p>
+
+        Background blanc derriere la section Menu

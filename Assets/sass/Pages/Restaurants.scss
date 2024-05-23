@@ -1,6 +1,8 @@
 main {
+    background-color: white;
 
     & .ImgAccueil {
+        height: 275px;
 
         & img {
             @extend %ImgCover;
@@ -9,9 +11,15 @@ main {
 
     & .Menu {
         border-radius: 40px 40px 0px 0px;
-        background-color: $txt-fond-sombre;
+        background-color: #F6F6F6;
         position: relative;
         top: -50px;
+
+        @media (min-width: 960px) {
+            max-width: 960px;
+            display: grid;
+            margin: auto;
+        }
 
 
         & .Intro {
@@ -46,6 +54,12 @@ main {
 
         & div {
             padding: 0px 15px 0px 15px;
+
+            @media (min-width:634px) {
+                max-width: 634px;
+                margin: auto;
+                width: 100%;
+            }
         }
 
         & h4 {
