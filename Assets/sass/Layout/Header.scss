@@ -9,8 +9,7 @@ header {
     }
 
     & a {
-        // @include grid-pos-set (1, auto, -3, auto);
-        // @extend %grid-center;
+
         @include grid-pos-set (1, auto, 1, auto);
         justify-self: flex-start;
 
