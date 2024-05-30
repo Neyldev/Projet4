@@ -469,6 +469,9 @@ main .Menu ul .list-item--8 {
 main .Menu ul .list-item--9 {
   animation-delay: 900ms;
 }
+main .Menu ul .list-item--10 {
+  animation-delay: 1000ms;
+}
 main .Menu ul .list-item:hover p {
   width: 55%;
 }

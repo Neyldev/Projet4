@@ -1,17 +1,12 @@
         Github : les pages les liens pour rediriger vers les restaurants ne fonctionnent pas sur l'host de Github
 		Probleme dans le fichier Btn.scss
 
-        Mauvaise utilisation des slide in pour les <li> ?
+LaNoteEnchantee animation du ShowList marche pas sur le N°10
 
+                @for $i from 1 to 11 {
+                    &--#{$i} {
+                        animation-delay: 100ms * $i;
+                    }
+                }
 
-
-                
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -moz-text-fill-color: transparent;
-
-
-        loader
-
-        
+                Modifié 10 a 11 pour faire fonctionner la derniere list
