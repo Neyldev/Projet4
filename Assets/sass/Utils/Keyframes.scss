@@ -1,0 +1,10 @@
+@keyframes showlist {
+    0% {
+        transform: translateY(2em);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,108 +1,167 @@
 main {
-    background-color: white;
-
-    & .ImgAccueil {
-        height: 275px;
+    & .Menu {
+        @extend %grid-center;
+        @include grid-template-set(1);
+        padding: 0 0;
+        justify-items: normal;
+        background-color: #ffffff;
 
         & img {
-            @extend %ImgCover;
+            margin: 0 0 -5em 0;
+            width: 100%;
+            height: 20em;
+            object-fit: cover;
         }
-    }
 
-    & .Menu {
-        border-radius: 40px 40px 0px 0px;
-        background-color: #F6F6F6;
-        position: relative;
-        top: -50px;
+        & .MenuCarte {
+            padding: 2em 1em 3em;
+            background-color: $back-grey;
+            border-radius: 3em 3em 0 0;
 
-        @media (min-width: 960px) {
-            max-width: 960px;
+            @media (min-width: 960px) {
+                max-width: 960px;
+                width: 100%;
+                margin: auto;
+            }
+
+            & h2 {
+                @include grid-pos-set (1, auto, 1, 4);
+                justify-self: start;
+                margin: 0 0 1em;
+                font-family: 'Shrikhand', cursive;
+                font-size: 2em;
+
+                display: flex;
+                justify-content: space-between;
+            }
+
+            & button {
+                margin: 0 1em 0 0;
+                font-size: 1em;
+                position: relative;
+                cursor: pointer;
+                background: none;
+                border: none;
+            }
+        }
+
+        & h3 {
+            @include grid-pos-set(2, auto, 1, 4);
+            justify-self: start;
+            @extend %border-length-var;
+            text-transform: uppercase;
+            font-weight: normal;
+        }
+
+        & ul {
+            @include grid-pos-set(3, auto, 1, 4);
             display: grid;
+            @include grid-template-set(1);
+            grid-gap: 1.5em;
+            margin: 1em 0 2.5em;
+            justify-self: normal;
+
+            & .list-item {
+                position: relative;
+                padding: 1em;
+                cursor: pointer;
+                overflow: hidden;
+                font-size: 1em;
+
+                & h4 {
+                    margin: 0 0 0.5em 0;
+                    font-size: 1.10em;
+                    font-weight: bold;
+
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: 85%;
+                    overflow: hidden;
+                    transition: all 0.5s;
+                }
+
+                & p {
+                    font-size: 1em;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    width: 80%;
+                    overflow: hidden;
+                    transition: all 0.5s;
+                }
+
+                & strong {
+                    position: absolute;
+                    right: 2em;
+                    bottom: 1em;
+                    transition: all 0.5s;
+                    font-weight: 800;
+                }
+
+                & span {
+                    position: absolute;
+                    top: 0;
+                    right: -5rem;
+                    width: 5rem;
+                    height: 100%;
+                    font-size: 1.5em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $txt-fond-sombre;
+                    background-color: $aqua-tertiaire;
+                    transition: all 0.5s;
+
+                    & .fa-check-circle {
+                        transform: rotate(-240deg);
+                        transition: all 0.5s;
+                    }
+
+                }
+            }
+
+            & .list-item {
+                animation: showlist 1000ms forwards;
+                opacity: 0;
+
+                @for $i from 1 to 10 {
+                    &--#{$i} {
+                        animation-delay: 100ms * $i;
+                    }
+                }
+            }
+
+            & .list-item:hover {
+                & p {
+                    width: 55%;
+                }
+
+                & h4 {
+                    width: 65%;
+                }
+
+                & strong {
+                    right: 6.5rem;
+                }
+
+                & span {
+                    right: 0;
+
+                    & i {
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+
+        & a {
+            @extend %FlexCenter;
+            padding: 1em 2.5em;
+            justify-self: center;
+            width: 20%;
             margin: auto;
         }
-
-
-        & .Intro {
-            display: flex;
-            justify-content: space-between;
-            padding: 30px 30px 0px 15px;
-
-            & .TitreRestaurant {
-                font-family: "Shrikhand", cursive;
-                font-weight: 400;
-                font-size: 28px;
-            }
-
-            & .btn__like {
-                position: absolute;
-                right: 1.5rem;
-                font-size: 1.5em;
-                cursor: pointer;
-            }
-        }
-
-        & .button {
-            padding: 50px 0px 0px 0px;
-            display: flex;
-            justify-content: center;
-
-            & a {
-                width: 30%;
-                text-align: center;
-            }
-        }
-
-        & div {
-            padding: 0px 15px 0px 15px;
-
-            @media (min-width:634px) {
-                max-width: 634px;
-                margin: auto;
-                width: 100%;
-            }
-        }
-
-        & h4 {
-            display: inline-block;
-            position: relative;
-            font-size: 16px;
-            font-weight: 300;
-            padding: 35px 5px 20px 0px;
-        }
-
-        h4:before {
-            content: "";
-            position: absolute;
-            width: 50%;
-            bottom: 13px;
-            border-bottom: 3px solid $aqua-tertiaire;
-        }
-
-
-        & ol {
-            display: grid;
-            grid-gap: 15px;
-
-            & li {
-                background-color: white;
-
-                & .Plat {
-                    font-size: 18px;
-                }
-
-                & .Plat,
-                .prix {
-                    font-weight: bold;
-                }
-
-                & .ingredients {
-                    display: flex;
-                    justify-content: space-between;
-                    font-size: 15px;
-                }
-            }
-        }
-
-
     }
+
+
+
 }

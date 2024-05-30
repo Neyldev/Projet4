@@ -7,18 +7,40 @@ h2 {
   font-weight: 700;
 }
 
-main .restaurants, main .fonctionnement, main .reservation, main .position, header {
+main .Menu, main .restaurants, main .fonctionnement, main .reservation, main .position, header {
   display: grid;
   align-content: center;
   justify-items: center;
 }
 
-main .ImgAccueil img, main .restaurants ul li a .ContainerImg img {
+main .Menu h3::after {
+  border-bottom: 3px #99e2d0 solid;
+  content: "";
+  display: block;
+  width: 2.5em;
+}
+
+main .restaurants ul li a .ContainerImg img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
+main .Menu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes showlist {
+  0% {
+    transform: translateY(2em);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 * {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -308,90 +330,163 @@ main .restaurants ul li a .ContainerInfo .btn__like {
   cursor: pointer;
 }
 
-main {
-  background-color: white;
-}
-main .ImgAccueil {
-  height: 275px;
-}
 main .Menu {
-  border-radius: 40px 40px 0px 0px;
-  background-color: #F6F6F6;
-  position: relative;
-  top: -50px;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0 0;
+  justify-items: normal;
+  background-color: #ffffff;
+}
+main .Menu img {
+  margin: 0 0 -5em 0;
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+}
+main .Menu .MenuCarte {
+  padding: 2em 1em 3em;
+  background-color: #f6f6f6;
+  border-radius: 3em 3em 0 0;
 }
 @media (min-width: 960px) {
-  main .Menu {
+  main .Menu .MenuCarte {
     max-width: 960px;
-    display: grid;
+    width: 100%;
     margin: auto;
   }
 }
-main .Menu .Intro {
+main .Menu .MenuCarte h2 {
+  grid-row: 1 / auto;
+  grid-column: 1 / 4;
+  justify-self: start;
+  margin: 0 0 1em;
+  font-family: "Shrikhand", cursive;
+  font-size: 2em;
   display: flex;
   justify-content: space-between;
-  padding: 30px 30px 0px 15px;
 }
-main .Menu .Intro .TitreRestaurant {
-  font-family: "Shrikhand", cursive;
-  font-weight: 400;
-  font-size: 28px;
-}
-main .Menu .Intro .btn__like {
-  position: absolute;
-  right: 1.5rem;
-  font-size: 1.5em;
+main .Menu .MenuCarte button {
+  margin: 0 1em 0 0;
+  font-size: 1em;
+  position: relative;
   cursor: pointer;
+  background: none;
+  border: none;
 }
-main .Menu .button {
-  padding: 50px 0px 0px 0px;
+main .Menu h3 {
+  grid-row: 2 / auto;
+  grid-column: 1 / 4;
+  justify-self: start;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+main .Menu ul {
+  grid-row: 3 / auto;
+  grid-column: 1 / 4;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 1.5em;
+  margin: 1em 0 2.5em;
+  justify-self: normal;
+}
+main .Menu ul .list-item {
+  position: relative;
+  padding: 1em;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 1em;
+}
+main .Menu ul .list-item h4 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 85%;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+main .Menu ul .list-item p {
+  font-size: 1em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 80%;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+main .Menu ul .list-item strong {
+  position: absolute;
+  right: 2em;
+  bottom: 1em;
+  transition: all 0.5s;
+  font-weight: 800;
+}
+main .Menu ul .list-item span {
+  position: absolute;
+  top: 0;
+  right: -5rem;
+  width: 5rem;
+  height: 100%;
+  font-size: 1.5em;
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: #99E2D0;
+  transition: all 0.5s;
 }
-main .Menu .button a {
-  width: 30%;
-  text-align: center;
+main .Menu ul .list-item span .fa-check-circle {
+  transform: rotate(-240deg);
+  transition: all 0.5s;
 }
-main .Menu div {
-  padding: 0px 15px 0px 15px;
+main .Menu ul .list-item {
+  animation: showlist 1000ms forwards;
+  opacity: 0;
 }
-@media (min-width: 634px) {
-  main .Menu div {
-    max-width: 634px;
-    margin: auto;
-    width: 100%;
-  }
+main .Menu ul .list-item--1 {
+  animation-delay: 100ms;
 }
-main .Menu h4 {
-  display: inline-block;
-  position: relative;
-  font-size: 16px;
-  font-weight: 300;
-  padding: 35px 5px 20px 0px;
+main .Menu ul .list-item--2 {
+  animation-delay: 200ms;
 }
-main .Menu h4:before {
-  content: "";
-  position: absolute;
-  width: 50%;
-  bottom: 13px;
-  border-bottom: 3px solid #99E2D0;
+main .Menu ul .list-item--3 {
+  animation-delay: 300ms;
 }
-main .Menu ol {
-  display: grid;
-  grid-gap: 15px;
+main .Menu ul .list-item--4 {
+  animation-delay: 400ms;
 }
-main .Menu ol li {
-  background-color: white;
+main .Menu ul .list-item--5 {
+  animation-delay: 500ms;
 }
-main .Menu ol li .Plat {
-  font-size: 18px;
+main .Menu ul .list-item--6 {
+  animation-delay: 600ms;
 }
-main .Menu ol li .Plat,
-main .Menu ol li .prix {
-  font-weight: bold;
+main .Menu ul .list-item--7 {
+  animation-delay: 700ms;
 }
-main .Menu ol li .ingredients {
-  display: flex;
-  justify-content: space-between;
-  font-size: 15px;
+main .Menu ul .list-item--8 {
+  animation-delay: 800ms;
+}
+main .Menu ul .list-item--9 {
+  animation-delay: 900ms;
+}
+main .Menu ul .list-item:hover p {
+  width: 55%;
+}
+main .Menu ul .list-item:hover h4 {
+  width: 65%;
+}
+main .Menu ul .list-item:hover strong {
+  right: 6.5rem;
+}
+main .Menu ul .list-item:hover span {
+  right: 0;
+}
+main .Menu ul .list-item:hover span i {
+  transform: rotate(0deg);
+}
+main .Menu a {
+  padding: 1em 2.5em;
+  justify-self: center;
+  width: 20%;
+  margin: auto;
 }

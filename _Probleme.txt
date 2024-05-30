@@ -1,5 +1,17 @@
         Github : les pages les liens pour rediriger vers les restaurants ne fonctionnent pas sur l'host de Github
-        position de la fleche dans le Header { @include grid-pos-set (1, auto, -3, auto); }
-Impossible de changer la font weight des <p>
+		Probleme dans le fichier Btn.scss
 
-        Background blanc derriere la section Menu
+        Mauvaise utilisation des slide in pour les <li> ?
+
+
+
+                
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+
+
+        loader
+
+        
