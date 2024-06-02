@@ -26,7 +26,7 @@ main .restaurants ul li a .ContainerImg img {
   object-fit: cover;
 }
 
-main .Menu a {
+main .Menu a, .loader {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,6 +39,23 @@ main .Menu a {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+@keyframes dotloader {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-30px);
   }
 }
 * {
@@ -181,6 +198,33 @@ button:hover .heart-two {
 
 .background {
   background: #f6f6f6;
+}
+
+.loader {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  font-family: "Shrikhand", cursive;
+  font-size: 45px;
+  animation: loader 2s forwards;
+  animation-delay: 2s;
+}
+.loader .dot {
+  font-size: 125px;
+  animation: dotloader infinite 0.5s alternate;
+  animation-delay: 0.3s;
+  padding-bottom: 60px;
+}
+.loader .dot--1 {
+  animation-delay: 0.2s;
+}
+.loader .dot--2 {
+  animation-delay: 0.4s;
+}
+.loader .dot--3 {
+  animation-delay: 0.6s;
 }
 
 main .position {
