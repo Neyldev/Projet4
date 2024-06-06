@@ -42,12 +42,12 @@ main .Menu a, .loader {
   }
 }
 @keyframes loader {
-  0% {
+  from {
     opacity: 1;
   }
-  100% {
+  to {
     opacity: 0;
-    display: none;
+    visibility: hidden;
   }
 }
 @keyframes dotloader {
@@ -203,7 +203,7 @@ button:hover .heart-two {
 .loader {
   position: fixed;
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: rgb(255, 255, 255);
   font-family: "Shrikhand", cursive;

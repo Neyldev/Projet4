@@ -10,13 +10,13 @@
 }
 
 @keyframes loader {
-    0% {
+    from {
         opacity: 1;
     }
 
-    100% {
+    to {
         opacity: 0;
-        display: none;
+        visibility: hidden;
     }
 }
 

@@ -1,0 +1,36 @@
+.loader {
+    position: fixed;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 1);
+
+
+
+    @extend %FlexCenter;
+    font-family: "Shrikhand", cursive;
+    font-size: 45px;
+
+    animation: loader 2s forwards;
+    animation-delay: 2s;
+
+    & .dot {
+
+        font-size: 125px;
+        animation: dotloader infinite 0.5s alternate;
+        animation-delay: 0.3s;
+        padding-bottom: 60px;
+
+        &--1 {
+            animation-delay: 0.2s;
+        }
+
+        &--2 {
+            animation-delay: 0.4s;
+        }
+
+        &--3 {
+            animation-delay: 0.6s;
+        }
+    }
+}
